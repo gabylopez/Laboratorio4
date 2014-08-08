@@ -22,14 +22,14 @@ public class StackVector<E> extends StackAbs<E> {
     private boolean Nodo; 
     
     
-    @Override
+    //@Override
     public void push(E item) {
         stack.addElement(item);
         stackPointer = stackPointer + 1;
         
     }
 
-    @Override
+    //@Override
     public E pop() {
         if(stackPointer>0){
             E last = stack.lastElement();
@@ -41,21 +41,21 @@ public class StackVector<E> extends StackAbs<E> {
                     
     }
 
-    @Override
+    //@Override
     public E peek() {
         return stack.lastElement();
     }
 
-    @Override
-    public boolean Vacio() {
+    //@Override
+    public boolean vacio() {
         if (stackPointer==0)
-            setVacio(true);
+            setvacio(true);
         else
-            setVacio(false);
-        return Vacio;
+            setvacio(false);
+        return vacio;
     }
 
-    @Override
+    //@Override
     public int tamañol() {
        return stackPointer;
     }
@@ -75,17 +75,17 @@ public class StackVector<E> extends StackAbs<E> {
     }
 
     /**
-     * @return the Vacio
+     * @return the vacio
      */
-    private boolean isVacio() {
-        return Vacio;
+    private boolean vacio() {
+        return vacio;
     }
 
     /**
-     * @param Vacio the Vacio to set
+     * @param vacio the vacio to set
      */
-    private void setVacio(boolean Vacio) {
-        this.Vacio = Vacio;
+    private void setvacio(boolean vacio) {
+        this.vacio = vacio;
     }
     
     

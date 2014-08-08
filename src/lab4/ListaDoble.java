@@ -6,10 +6,10 @@
 // 9 de Agosto de 2014
 //------------------------------------
 
-public class ListaDoble<E> extends AbstractList<E> {
+public class ListaDoble<E> extends ListaAbs<E> {
     protected int contador;
-    protected NodeDoble<E> primero;
-    protected NodeDoble<E> cola;
+    protected NodoDoble<E> primero;
+    protected NodoDoble<E> cola;
 
     public ListaDoble() // contruye una lista vacia
     {
@@ -19,110 +19,110 @@ public class ListaDoble<E> extends AbstractList<E> {
     }
 
 
-    public void addFirst(E value) // añade un elemento al principio
+    public void addFirst(E val) // añade un elemento al principio
 
     {
-       primero = new NodeDoble<E>(value, primero, null);
+       primero = new NodoDoble<E>(val, primero, null);
        if (cola == null) cola = primero;
        contador++;
     }
 
 
-    public void addLast(E value) //  añade un elemento al final
+    public void addLast(E val) //  añade un elemento al final
 
     {
 
-       cola = new NodeDoble<E>(value, null, cola);
+       cola = new NodoDoble<E>(val, null, cola);
 
        if (primero == null) primero = cola;
        contador++;
     }
 
 
-    @Override
+    //@Override
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
+    //@Override
     public void clear() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
+    //@Override
     public E getFirst() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
+    //@Override
     public E getLast() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
 
-    @Override
-    public E remove(E value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //@Override
+    public E remove(E val) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
-    public void add(E value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //@Override
+    public void add(E val) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
+    //@Override
     public E remove() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
+    //@Override
     public E get() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
-    public int indexOf(E value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //@Override
+    public int indexOf(E val) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
-    public int lastIndexOf(E value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //@Override
+    public int lastIndexOf(E val) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
+    //@Override
     public E get(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
+    //@Override
     public E set(int i, E o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
+    //@Override
     public void add(int i, E o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
+    //@Override
     public E remove(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 	
 	    public E removeFirst() // quita el primer elemento
     {
-        if(!isEmpty()){
-            NodeDoble<E> temp = primero;
+        if(!vacio()){
+            NodoDoble<E> tem = primero;
             primero = primero.next();
             if(primero!= null){
                 primero.setPrevious(null);
             } else{
                 cola = null;
             }
-            temp.setNext(null);
+            tem.setNext(null);
             contador--;
-            return temp.value();
+            return tem.val();
         }else {
             throw new IndexOutOfBoundsException();
         }
@@ -130,7 +130,7 @@ public class ListaDoble<E> extends AbstractList<E> {
     
     public E removeLast()// quita el ultimo elemento
     {
-       NodeDoble<E> temp = cola;
+       NodoDoble<E> tem = cola;
        cola = cola.previous();
        if (cola == null) {
            primero = null;
@@ -138,7 +138,7 @@ public class ListaDoble<E> extends AbstractList<E> {
            cola.setNext(null);
        }
        contador--;
-       return temp.value();
+       return tem.val();
 
 }
 

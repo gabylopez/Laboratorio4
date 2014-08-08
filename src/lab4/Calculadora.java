@@ -42,7 +42,7 @@ public class Calculadora {
                     cant=cadena.charAt(j);
                     operacion=cant+"";
                     if(cant!=' '){
-                        if(miVector.size()==2){
+                        if(miVector.tamaño()==2){
                             if(operacion.equals("+")){
                                 total=(Integer.parseInt(miVector.pop()))+(Integer.parseInt(miVector.pop()));                              
                             }

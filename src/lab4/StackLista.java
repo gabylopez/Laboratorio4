@@ -7,7 +7,7 @@
 //------------------------------------
 
 public class StackLista<E> extends StackAbs<E> {
-    public ListFactory miFactor = new ListFactory();
+    public FactoryLista miFactor = new FactoryLista();
     protected List<E> datos = miFactor.getLista(menu());
     
     public String menu()

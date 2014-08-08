@@ -13,12 +13,12 @@ public abstract class ListaAbs<E> implements List<E> {
 
    public boolean vacio() // si la lista esta vacia entonces true
    {
-      return size() == 0;
+      return tamaño() == 0;
    }
   
-  public boolean contenido(E value) // si hay dos iguales entonces regresa True
+  public boolean contenido(E val) // si hay dos iguales entonces regresa True
 
   {
-	return -1 != indexOf(value);
+	return -1 != indexOf(val);
   }
 }

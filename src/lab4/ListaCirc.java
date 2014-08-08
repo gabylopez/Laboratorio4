@@ -8,7 +8,7 @@
 
 public class ListaCirc<E> extends ListaAbs<E> {
     
-    protected Node<E> cola; 
+    protected Nodo<E> cola; 
     protected int contador;
 
     public ListaCirc()
@@ -18,10 +18,10 @@ public class ListaCirc<E> extends ListaAbs<E> {
        contador = 0;
     }
 
-    public void addFirst(E value)
+    public void addFirst(E val)
     //  para añadir un elemto al inicio de la lista
     {
-       Node<E> tem = new Node<E>(value);
+       Nodo<E> tem = new Nodo<E>(val);
        if (cola == null) { // se añade el primer elemento
            cola = tem;
            cola.setNext(cola);
@@ -33,23 +33,23 @@ public class ListaCirc<E> extends ListaAbs<E> {
     }
 
 
-    public void addLast(E value)
+    public void addLast(E val)
     //  añade el elemento al final de la lista
     {
        // new entry:
-       addFirst(value);
+       addFirst(val);
        cola = cola.next();
     }
 
     public E removeFirst()
     // quita el elemento del final
     {
-       Node<E> apunt = cola;
+       Nodo<E> apunt = cola;
        while (apunt.next() != cola) {
            apunt = apunt.next();
        }
      
-       Node<E> tem = cola;
+       Nodo<E> tem = cola;
        if (apunt == cola)
        {
            cola = null;
@@ -58,7 +58,7 @@ public class ListaCirc<E> extends ListaAbs<E> {
            cola = apunt;
        }
        contador--;
-       return tem.value();
+       return tem.val();
     }
 
    
@@ -66,38 +66,38 @@ public class ListaCirc<E> extends ListaAbs<E> {
         return contador;
     }
 
-    @Override
+   // @Override
     public void limpiar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
 	    public E get(int i) {
-        if((i>=0) && (i<tamaño()) && !isEmpty()){
-            Node<E> apunt = cola.next();
+        if((i>=0) && (i<tamaño()) && !vacio()){
+            Nodo<E> apunt = cola.next();
             while (i>0){
                 apunt = apunt.next();
                 i--;
             }
-            return apunt.value();
+            return apunt.val();
         }else {
             throw new IndexOutOfBoundsException();
         }
     }
 
-    @Override
+   // @Override
     public E set(int i, E o) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
+   // @Override
     public void add(int i, E o) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
     public E remove(int i) {
-        if((i>=0) && (i<tamaño()) && !isEmpty()){
-            Node<E> previous = cola;
-            Node<E> apunt = cola.next();
+        if((i>=0) && (i<tamaño()) && !vacio()){
+            Nodo<E> previous = cola;
+            Nodo<E> apunt = cola.next();
             while(i>0){
                 i--;
                 previous=apunt;
@@ -106,54 +106,54 @@ public class ListaCirc<E> extends ListaAbs<E> {
             previous.setNext(apunt.next());
             contador--;
             
-            return apunt.value();
+            return apunt.val();
         }else{
             throw new IndexOutOfBoundsException();
         }
     }
 	
-    @Override
+   // @Override
     public E getFirst() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
+    //@Override
     public E getLast() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
+    //@Override
     public E removeLast() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
     
-    @Override
-    public E remove(E value) {
+  //  @Override
+    public E remove(E val) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
-    public void add(E value) {
+   // @Override
+    public void add(E val) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
+   // @Override
     public E remove() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
+    //@Override
     public E get() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
-    public int indexOf(E value) {
+   // @Override
+    public int indexOf(E val) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 
-    @Override
-    public int lastIndexOf(E value) {
+  //  @Override
+    public int lastIndexOf(E val) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | temlates.
     }
 

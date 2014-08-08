@@ -1,35 +1,35 @@
 //------------------------------------
-//Node
+//Nodo
 // Augusto Cárdenas 13136
 // Maria Gabriela Lopez 13056
 // Andres Lainfiesta 13072
 // 9 de Agosto de 2014
 //------------------------------------
 
-public class Node<E> {
+public class Nodo<E> {
     protected E datos; // valor guardado en este elemento
-   protected Node<E> nextElement; // referencia al siguiente elemento
+   protected Nodo<E> nextElement; // referencia al siguiente elemento
 
-   public Node(E v, Node<E> next)
+   public Nodo(E v, Nodo<E> next)
 
    {
        datos = v;
        nextElement = next;
    }
 
-   public Node(E v)
+   public Nodo(E v)
    // contruye una nueva cola de la lista valor v
    {
       this(v,null);
    }
 
-   public Node<E> next()
+   public Nodo<E> next()
    // devuelve la referencia al siguiente valor en la lista
    {
       return nextElement;
    }
 
-   public void setNext(Node<E> next)
+   public void setNext(Nodo<E> next)
    // hace referencia al siguiente valor
    {
       nextElement = next;

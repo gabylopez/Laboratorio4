@@ -1,5 +1,5 @@
 //------------------------------------
-//NodeDoble
+//NodoDoble
 // Augusto Cárdenas 13136
 // Maria Gabriela Lopez 13056
 // Andres Lainfiesta 13072
@@ -7,14 +7,14 @@
 //------------------------------------
 
 
-public class NodeDoble<E> {
+public class NodoDoble<E> {
     protected E dato;
-    protected NodeDoble<E> siguiente;
-    protected NodeDoble<E> anterior;
+    protected NodoDoble<E> siguiente;
+    protected NodoDoble<E> anterior;
 
-    public NodeDoble(E v,
-                            NodeDoble<E> next,
-                            NodeDoble<E> previous)
+    public NodoDoble(E v,
+                            NodoDoble<E> next,
+                            NodoDoble<E> previous)
     {
         dato = v;
         siguiente = next;
@@ -25,7 +25,7 @@ public class NodeDoble<E> {
             anterior.siguiente = this;
     }
     
-    public void setPrevious(NodeDoble<E> previous)
+    public void setPrevious(NodoDoble<E> previous)
     {
         anterior = previous;
     }
@@ -40,23 +40,23 @@ public class NodeDoble<E> {
         dato = value;
     }
 	
-	 public NodeDoble(E v) // contruye solamente un elemento
+	 public NodoDoble(E v) // contruye solamente un elemento
 
     {
         this(v,null,null);
     }
     
-    public NodeDoble<E> previous()
+    public NodoDoble<E> previous()
     {
         return anterior;
     }
     
-    public void setNext(NodeDoble<E> v)
+    public void setNext(NodoDoble<E> v)
     {
         siguiente = v;
     }
     
-    public NodeDoble<E> next()
+    public NodoDoble<E> next()
     {
         return siguiente;
     }

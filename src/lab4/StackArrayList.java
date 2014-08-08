@@ -40,7 +40,7 @@ public class StackArrayList<E> extends StackAbs<E> {
     
     public int tamaño()
     // post: returns the number of elements in the stack
-    {
+    
     	return datos.tamaño();
     }
     

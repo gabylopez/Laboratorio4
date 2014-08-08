@@ -10,7 +10,7 @@ abstract public class StackAbs<E> implements Stack<E> {
      public boolean vacio()
    // Stack vacio entonces True
    {
-      return size() == 0;
+      return tamaño() == 0;
    }
 }
 	
